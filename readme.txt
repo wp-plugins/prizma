@@ -50,4 +50,4 @@ Easy on the caps lock. We\'re happy to answer them at support@prizma.ai.
 3. Feature recommendations in a single row
 
 == Changelog ==
-Version 1.0: It\'s version 1! Everything\'s new.
+Version 1.0: It's version 1! Everything's new.
