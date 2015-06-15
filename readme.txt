@@ -10,9 +10,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Prizma for WordPress is a Video Engagement Platform that earns you money while keeping visitors on your website.
 
 == Description ==
-Prizma for WordPress
-================
-
 Prizma helps you connect your content to the people who want to see it most. Our patented recommendation engine shows viewers the right video at the right moment, keeping visitors engaged with your site and maximizing your site\'s revenue with a native, unobtrusive experience.
 
 FEATURES: a downright easy plug-and-play experience to start engaging your visitors immediately. Installation and activation take three minutes or less. Intuitive and robust customization options. The Prizma experience works for your site, not the other way around.
