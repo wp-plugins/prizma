@@ -3,7 +3,7 @@ Contributors: Prizma
 Tags: video engagement platform, syndication, monetization
 Requires at least: 3.8
 Tested up to: 4.2.2
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,4 +50,12 @@ Easy on the caps lock. We're happy to answer them at support@prizma.ai.
 3. Feature recommendations in a single row
 
 == Changelog ==
-Version 1.0: It's version 1! Everything's new.
+
+= 1.1 =
+*Release Date - 9 July 2015*
+
+* Fixed bug with external CSS files
+
+= 1.0 =
+
+* It's version 1! Everything's new.

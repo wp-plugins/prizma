@@ -46,7 +46,7 @@ class Fem_Inc_Widget {
     $container_id = "fem-widget-container-" . uniqid("fem");
 
     if ("" !== $data['cssFiles']) {
-      $data['cssFiles'] = json_encode(explode(' ', $data['cssFiles']));
+      $data['cssFiles'] = preg_replace("#\\\\/#", '/', json_encode(explode(' ', $data['cssFiles'])));
     }
     if (isset($data['width']) && "100%" === trim($data['width'])) {
       unset($data['width']);
@@ -54,7 +54,10 @@ class Fem_Inc_Widget {
 
     $params = "";
     foreach ($data as $key => $val) {
-      if ('cssFiles' === $key && !$val) {
+      if ('cssFiles' === $key) {
+        if($val){
+          $params .= "{$key}: $val,\n";
+        }
         continue;
       }
 
@@ -69,9 +72,9 @@ class Fem_Inc_Widget {
       FEMOptions.push({
         {$params}
         id: '{$container_id}',
+        url: 'http://fem-inc.com',
       });
     </script>";
-//        url: 'http://fem-inc.com',
 
     return $ret;
   }
