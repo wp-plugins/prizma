@@ -7,7 +7,7 @@ class Fem_Inc_Widget_Sidebar extends WP_Widget {
 
   function Fem_Inc_Widget_Sidebar() {
     wp_enqueue_style('fem-inc-widget-admin-css', plugins_url('fem-inc-widget-admin.css', __FILE__));
-    wp_register_script("fem-inc-widget", "http://external.fem-inc.com/js/fem-inc-widget.js");
+    wp_register_script("fem-inc-widget", "http://cdn.prizma.tv/widget/prizma-widget.js");
 
     self::$options = get_option('fem-inc-widget-options');
 

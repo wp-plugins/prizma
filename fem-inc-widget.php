@@ -4,7 +4,7 @@
  * Plugin Name: Prizma for WordPress
  * Plugin URI: http://prizma.ai
  * Description: Maximize, measure, and monetize video engagement on your site. Grow your business by distributing premium Prizma Syndication Network content. 
- * Version: 1.0.0
+ * Version: 1.2
  * Author: FEM, Inc.
  * Author URI: http://prizma.ai
  * License: MIT
@@ -40,7 +40,7 @@ class Fem_Inc_Widget {
   }
 
   static public function render($data = array()) {
-    wp_enqueue_script('fem-inc-widget', "http://external.fem-inc.com/js/fem-inc-widget.js");
+    wp_enqueue_script('fem-inc-widget', "http://cdn.prizma.tv/widget/prizma-widget.js");
     wp_enqueue_style('fem-inc-widget-css', plugins_url('fem-inc-widget.css', __FILE__));
 
     $container_id = "fem-widget-container-" . uniqid("fem");
@@ -68,11 +68,11 @@ class Fem_Inc_Widget {
     $ret = "
       <div class='fem-inc-widget-container' id='{$container_id}'></div>
       <script>
-      var FEMOptions = FEMOptions || [];
-      FEMOptions.push({
+      var prizmaOptions = prizmaOptions || [];
+      prizmaOptions.push({
         {$params}
-        id: '{$container_id}',
-        url: 'http://fem-inc.com',
+        id: '{$container_id}'
+//        url: 'http://fem-inc.com',
       });
     </script>";
 
