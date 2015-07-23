@@ -2,8 +2,8 @@
 Contributors: Prizma
 Tags: video engagement platform, syndication, monetization
 Requires at least: 3.8
-Tested up to: 4.2.2
-Stable tag: 1.2
+Tested up to: 4.2.3
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,15 +51,20 @@ Easy on the caps lock. We're happy to answer them at support@prizma.ai.
 
 == Changelog ==
 
+= 1.3 =
+*Release Date - 23 July 2015*
+
+* Automatically display prizma widget also on pages and posts, that existed before plugin installation.
+
 = 1.2 =
 *Release Date - 20 July 2015*
 
-* Updated widget library
+* Updated widget library.
 
 = 1.1 =
 *Release Date - 9 July 2015*
 
-* Fixed bug with external CSS files
+* Fixed bug with external CSS files.
 
 = 1.0 =
 

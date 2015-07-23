@@ -4,7 +4,7 @@
  * Plugin Name: Prizma for WordPress
  * Plugin URI: http://prizma.ai
  * Description: Maximize, measure, and monetize video engagement on your site. Grow your business by distributing premium Prizma Syndication Network content. 
- * Version: 1.2
+ * Version: 1.3
  * Author: FEM, Inc.
  * Author URI: http://prizma.ai
  * License: MIT
@@ -44,7 +44,7 @@ class Fem_Inc_Widget {
     wp_enqueue_style('fem-inc-widget-css', plugins_url('fem-inc-widget.css', __FILE__));
 
     $container_id = "fem-widget-container-" . uniqid("fem");
-
+    
     if ("" !== $data['cssFiles']) {
       $data['cssFiles'] = preg_replace("#\\\\/#", '/', json_encode(explode(' ', $data['cssFiles'])));
     }
@@ -72,7 +72,7 @@ class Fem_Inc_Widget {
       prizmaOptions.push({
         {$params}
         id: '{$container_id}'
-//        url: 'http://fem-inc.com',
+//        ,url: 'http://fem-inc.com',
       });
     </script>";
 
@@ -80,7 +80,8 @@ class Fem_Inc_Widget {
   }
 
   private static function getPropValue($name) {
-    return get_post_meta(get_the_ID(), "fem-inc-widget-meta-" . $name, true);
+    $meta = get_post_meta(get_the_ID(), "fem-inc-widget-meta-" . $name, true);
+    return $meta === "" ? self::$options[$name] : $meta;
   }
 
   static public function displayBelowPost($content) {
@@ -92,6 +93,7 @@ class Fem_Inc_Widget {
 
       // $partnerID is mandatory
     $partnerID = self::$options["partnerID"];
+    
     if ("off" !== self::getPropValue($isEnabledProp) && $partnerID) {
       $data = array(
           "partnerID" => $partnerID,
@@ -99,7 +101,7 @@ class Fem_Inc_Widget {
           "layout" => self::getPropValue("layout"),
           "headerText" => self::getPropValue("headerText"),
           "width" => self::getPropValue("width"),
-          "autoplay" => self::getPropValue("autoplay"),
+          "autoplay" => "on" === self::getPropValue("autoplay") ? true : false,
       );
       
       $content .= self::render($data);
